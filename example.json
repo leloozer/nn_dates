@@ -1,0 +1,46 @@
+{
+   "NLU":[
+      {
+	 "meaning":[],
+         "source":"tester",
+         "value":0
+      },
+      {
+         "meaning":"D",
+         "source":"le",
+         "value":0
+      },
+      {
+         "meaning":[
+            "Jourssemaines"
+         ],
+         "source":"mardi",
+         "value":0
+      },
+      {
+         "meaning":[
+
+         ],
+         "source":"prochain",
+         "value":0
+      }
+   ],
+   "postagger":[
+      [
+         "testez",
+         "V"
+      ],
+      [
+         "le",
+         "D"
+      ],
+      [
+         "mardi",
+         "N"
+      ],
+      [
+         "prochain",
+         "JJ"
+      ]
+   ]
+}

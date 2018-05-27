@@ -1,9 +1,23 @@
 class Time_key:
-    table = {
-            'wdays' : ['lundi', 'mardi', 'mercredi', 'jeudi',
-                            'vendredi', 'samedi'],
-            'advs' : ['avant-hier', 'hier', "aujourd'hui",
-                        'demain', u'après-demain'],
-            'adjs' : [u'précédent', 'dernier', 'suivant', 'prochain'],
-            'nouns' : ['semaine', 'mois']
-            }
+	table = {
+		'days' :{
+			'meaning' : 'Jourssemaines',
+		 	'lemma' :['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+			},
+
+		'RB' :{
+			'tag' : 'RB',
+			'lemma' : ['avant-hier', 'hier', "aujourd'hui",
+						'demain', u'après-demain']
+			},
+
+		'ordinals' :{
+			'meaning' : 'Ordinaux',
+			'lemma' : [u'précédent', 'dernier', 'suivant', 'prochain']
+			},
+
+		'months' :{
+			'meaning' : 'Mois',
+			'lemma' : ['semaine', 'mois']
+			}
+		}
