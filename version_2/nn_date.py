@@ -1,6 +1,5 @@
 import datetime
 import sys
-import re
 import json
 from time_key import Time_key
 
