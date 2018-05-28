@@ -11,10 +11,7 @@ class Time_key:
 						'demain', u'après-demain']
 			},
 
-		'ordinals' :{
-			'meaning' : 'Ordinaux',
-			'lemma' : [u'précédent', 'dernier', 'suivant', 'prochain']
-			},
+		'adjs' : [u'précédent', 'dernier', 'suivant', 'prochain'],
 
 		'months' :{
 			'meaning' : 'Mois',

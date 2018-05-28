@@ -4,19 +4,16 @@ import re
 import json
 from time_key import Time_key
 
-def	check_ordinals(nlu, i, ordinals):
+def	check_adjs(nlu, i, adjs):
 	if (i > 0):
-		if (nlu[i - 1]["meaning"]
-			and nlu[i - 1]["meaning"][0] == ordinals["meaning"]
-			and nlu[i - 1]["source"] == ordinals["lemma"][0]):
+		if (nlu[i - 1]["source"] == adjs[0]):
 			return (False)
 	if (i < len(nlu) - 1):
-		if (nlu[i + 1]["meaning"] and nlu[i + 1]["meaning"][0] == ordinals["meaning"]):
-			if (nlu[i + 1]["source"] == ordinale["lemma"][1]):
-				return (False)
-			if (nlu[i + 1]["source"] == ordinale["lemma"][2]
-				or nlu[i + 1]["source"] == ordinale["lemma"][3]):
-				return (True)
+		if (nlu[i + 1]["source"] == adjs[1]):
+			return (False)
+		if (nlu[i + 1]["source"] == adjs[2]
+			or nlu[i + 1]["source"] == adjs[3]):
+			return (True)
 	return (None)
 		
 
@@ -25,14 +22,14 @@ def	check_wday(nlu, i, future, time_keys, today):
 	if (not nlu[i]["meaning"] or not nlu[i]["meaning"][0] == days["meaning"]):
 		return (None)
 	day = nlu[i]["source"]
-	for i in range(len(days["lemma"])):
-		if (day == days["lemma"][i]):
-			sday = i
+	for j in range(len(days["lemma"])):
+		if (day == days["lemma"][j]):
+			sday = j
 			break
 	if (not sday):
 		return (None)
-	f = check_ordinals(nlu, i, time_keys["ordinals"])
-	if (f):
+	f = check_adjs(nlu, i, time_keys["adjs"])
+	if (not f is None):
 		future = f
 	if (future == True or future == None):
 		if (today.weekday() >= sday and future == True or today.weekday() > sday):
@@ -44,7 +41,6 @@ def	check_wday(nlu, i, future, time_keys, today):
 			daydiff = -(today.weekday() + 7 - sday)
 		else:
 			daydiff = -(today.weekday() - sday)
-	print(daydiff)
 	return (daydiff)
 
 def	check_RB(nlu, rb):
