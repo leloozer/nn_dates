@@ -22,6 +22,7 @@ def	check_wday(nlu, i, future, time_keys, today):
 	if (not nlu[i]["meaning"] or not nlu[i]["meaning"][0] == days["meaning"]):
 		return (None)
 	day = nlu[i]["source"]
+	sday = None
 	for j in range(len(days["lemma"])):
 		if (day == days["lemma"][j]):
 			sday = j
